@@ -93,10 +93,18 @@
 .contact-map {
   border-radius: 10px;
   overflow: hidden;
-  height: 220px;
 }
 
-.contact-map iframe {
+/* Conteneur aspect-ratio pour éviter CLS */
+.contact-map-ratio {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+}
+
+.contact-map-ratio iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
@@ -157,6 +165,10 @@
 .form-statut.err {
   background: #fee2e2;
   color: #991b1b;
+}
+
+.form-statut.vide {
+  display: none;
 }
 
 .btn-submit {

@@ -85,14 +85,18 @@ export default function Contact() {
               </div>
             </div>
 
+            {/* Conteneur aspect-ratio pour éviter CLS (CWV) */}
             <div className="contact-map">
-              <iframe
-                title="Localisation"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9!2d2.3465!3d48.8604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzM3LjQiTiAywrAyMCc0Ny40IkU!5e0!3m2!1sfr!2sfr!4v1"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              <div className="contact-map-ratio">
+                <iframe
+                  title="Localisation du restaurant"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9!2d2.3465!3d48.8604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzM3LjQiTiAywrAyMCc0Ny40IkU!5e0!3m2!1sfr!2sfr!4v1"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  aria-label="Carte Google Maps — 12 rue des Saveurs, Paris"
+                />
+              </div>
             </div>
           </div>
 
@@ -110,6 +114,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Jean Dupont"
                   required
+                  aria-required="true"
                 />
               </div>
               <div className="form-groupe">
@@ -122,6 +127,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="jean@email.com"
                   required
+                  aria-required="true"
                 />
               </div>
               <div className="form-groupe">
@@ -134,14 +140,17 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Votre message..."
                   required
+                  aria-required="true"
                 />
               </div>
 
-              {statut && (
-                <p className={`form-statut${statut.ok ? " ok" : " err"}`}>
-                  {statut.msg}
-                </p>
-              )}
+              <p
+                role="alert"
+                aria-live="polite"
+                className={`form-statut${statut ? (statut.ok ? " ok" : " err") : " vide"}`}
+              >
+                {statut ? statut.msg : ""}
+              </p>
 
               <button type="submit" className="btn-submit" disabled={envoi}>
                 {envoi ? "Envoi en cours…" : "Envoyer le message"}

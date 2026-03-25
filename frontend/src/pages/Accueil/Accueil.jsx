@@ -1,15 +1,31 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import "./Accueil.css";
 
+const API = import.meta.env.VITE_API_URL;
+
 export default function Accueil() {
+  const [sections, setSections] = useState({});
+
+  useEffect(() => {
+    fetch(`${API}/api/sections`)
+      .then((r) => r.ok ? r.json() : {})
+      .then(setSections)
+      .catch(() => {});
+  }, []);
+
+  const heroStyle = sections["hero"]
+    ? { backgroundImage: `url(${sections["hero"]})` }
+    : {};
+
   return (
     <div className="page-accueil">
       <Navbar />
 
       {/* HERO */}
-      <section className="hero" id="home">
+      <section className="hero" id="home" style={heroStyle}>
         <div className="hero-overlay" />
         <div className="hero-contenu">
           <p className="hero-tag">Restaurant &amp; Snack</p>
@@ -26,30 +42,30 @@ export default function Accueil() {
       </section>
 
       {/* BANDE INFO */}
-      <div className="bande-info">
+      <div className="bande-info" role="complementary" aria-label="Informations pratiques">
         <div className="bande-item">
-          <i className="fas fa-map-marker-alt" />
+          <i className="fas fa-map-marker-alt" aria-hidden="true" />
           <div>
             <strong>Adresse</strong>
             <span>12 rue des Saveurs, Paris 1er</span>
           </div>
         </div>
         <div className="bande-item">
-          <i className="fas fa-clock" />
+          <i className="fas fa-clock" aria-hidden="true" />
           <div>
             <strong>Horaires</strong>
             <span>Lun–Sam&nbsp;: 11h–23h &nbsp;|&nbsp; Dim&nbsp;: 12h–22h</span>
           </div>
         </div>
         <div className="bande-item">
-          <i className="fas fa-phone" />
+          <i className="fas fa-phone" aria-hidden="true" />
           <div>
             <strong>Téléphone</strong>
             <span><a href="tel:+33600000000">06 00 00 00 00</a></span>
           </div>
         </div>
         <div className="bande-item">
-          <i className="fab fa-whatsapp" />
+          <i className="fab fa-whatsapp" aria-hidden="true" />
           <div>
             <strong>WhatsApp</strong>
             <span><a href="https://wa.me/33600000000">Écrire un message</a></span>
@@ -57,28 +73,36 @@ export default function Accueil() {
         </div>
       </div>
 
-      {/* À PROPOS */}
-      <section className="apropos" id="apropos">
-        <div className="apropos-texte">
-          <p className="section-label">Notre histoire</p>
-          <h2>Passion, générosité&nbsp;&amp; authenticité</h2>
-          <p>
-            La Belle Assiette est née d'une passion simple&nbsp;: bien manger sans se prendre la tête.
-            Depuis 2018, nous accueillons les familles, les amis et les curieux dans un espace
-            convivial où chaque plat est préparé avec amour.
-          </p>
-          <p>
-            Notre cuisine mêle influences méditerranéennes et saveurs du monde, avec des produits
-            locaux sélectionnés chaque matin. Restauration rapide ou repas assis — vous êtes chez vous.
-          </p>
-          <Link to="/menu" className="btn-primary" style={{ marginTop: "1.5em", display: "inline-block" }}>
-            Découvrir le menu
-          </Link>
-        </div>
-        <div className="apropos-photo">
-          <img src="/chi-siamo.jpg" alt="Notre équipe en cuisine" />
-        </div>
-      </section>
+      <main id="main-content">
+        {/* À PROPOS */}
+        <section className="apropos" id="apropos">
+          <div className="apropos-texte">
+            <p className="section-label">Notre histoire</p>
+            <h2>Passion, générosité&nbsp;&amp; authenticité</h2>
+            <p>
+              La Belle Assiette est née d'une passion simple&nbsp;: bien manger sans se prendre la tête.
+              Depuis 2018, nous accueillons les familles, les amis et les curieux dans un espace
+              convivial où chaque plat est préparé avec amour.
+            </p>
+            <p>
+              Notre cuisine mêle influences méditerranéennes et saveurs du monde, avec des produits
+              locaux sélectionnés chaque matin. Restauration rapide ou repas assis — vous êtes chez vous.
+            </p>
+            <Link to="/menu" className="btn-primary" style={{ marginTop: "1.5em", display: "inline-block" }}>
+              Découvrir le menu
+            </Link>
+          </div>
+          <div className="apropos-photo">
+            <img
+              src={sections["chi-siamo"] || "/chi-siamo.jpg"}
+              alt="Notre équipe en cuisine"
+              loading="lazy"
+              width="600"
+              height="450"
+            />
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </div>

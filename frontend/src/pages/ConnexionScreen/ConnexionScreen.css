@@ -96,6 +96,10 @@
   margin-bottom: 1em;
 }
 
+.cx-erreur.vide {
+  display: none;
+}
+
 .cx-btn {
   width: 100%;
   background: var(--primary);

@@ -68,7 +68,9 @@ export default function ConnexionScreen() {
             </div>
           </div>
 
-          {erreur && <p className="cx-erreur">{erreur}</p>}
+          <p role="alert" aria-live="assertive" className={`cx-erreur${erreur ? "" : " vide"}`}>
+            {erreur}
+          </p>
 
           <button type="submit" className="cx-btn" disabled={chargement}>
             {chargement ? "Connexion…" : "Se connecter"}

@@ -37,7 +37,7 @@ export default function Navbar() {
         <i className={ouvert ? "fas fa-times" : "fas fa-bars"} />
       </button>
 
-      <ul className={`navbar-liens${ouvert ? " ouvert" : ""}`}>
+      <ul className={`navbar-liens${ouvert ? " ouvert" : ""}`} aria-label="Navigation principale">
         {LIENS.map((l) => (
           <li key={l.to}>
             <Link
