@@ -3,14 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>La Belle Assiette — Restaurant & Snack</title>
-    <meta name="description" content="Restaurant et snack au cœur de la ville. Cuisine généreuse, produits frais, ambiance chaleureuse." />
+
+    <!-- SEO fondamental -->
+    <title>La Belle Assiette — Restaurant &amp; Snack à Paris</title>
+    <meta name="description" content="Restaurant et snack au cœur de Paris. Cuisine généreuse, produits frais sélectionnés chaque matin, ambiance chaleureuse. Ouvert lun–sam 11h–23h." />
+    <link rel="canonical" href="https://demo-restau.mandev.fr" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="restaurant" />
+    <meta property="og:site_name"   content="La Belle Assiette" />
+    <meta property="og:title"       content="La Belle Assiette — Restaurant &amp; Snack à Paris" />
+    <meta property="og:description" content="Restaurant et snack au cœur de Paris. Cuisine généreuse, produits frais sélectionnés chaque matin, ambiance chaleureuse." />
+    <meta property="og:url"         content="https://demo-restau.mandev.fr" />
+    <meta property="og:image"       content="https://demo-restau.mandev.fr/hero.jpg" />
+    <meta property="og:locale"      content="fr_FR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="La Belle Assiette — Restaurant &amp; Snack à Paris" />
+    <meta name="twitter:description" content="Cuisine généreuse, produits frais, ambiance chaleureuse au cœur de Paris. Ouvert lun–sam 11h–23h." />
+    <meta name="twitter:image"       content="https://demo-restau.mandev.fr/hero.jpg" />
+
+    <!-- JSON-LD : FoodEstablishment -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FoodEstablishment",
+      "name": "La Belle Assiette",
+      "description": "Restaurant et snack proposant une cuisine généreuse avec des produits frais sélectionnés chaque matin.",
+      "url": "https://demo-restau.mandev.fr",
+      "telephone": "+33600000000",
+      "servesCuisine": ["Française", "Méditerranéenne"],
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 rue des Saveurs",
+        "addressLocality": "Paris",
+        "postalCode": "75001",
+        "addressCountry": "FR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "11:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday"],
+          "opens": "12:00",
+          "closes": "22:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/labellebissiette",
+        "https://www.facebook.com/labellebissiette"
+      ]
+    }
+    </script>
+
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- LCP : préchargement de l'image hero pour améliorer le score CWV -->
+
+    <!-- LCP : préchargement de l'image hero -->
     <link rel="preload" href="/hero.jpg" as="image" fetchpriority="high" />
   </head>
   <body>
