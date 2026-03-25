@@ -1,0 +1,211 @@
+.page-galerie {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+/* GALERIE */
+.galerie-section {
+  background: var(--navy);
+  padding: 7em 5em 5em;
+}
+
+.galerie-header {
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+
+.galerie-header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--white);
+  margin: 0.2em 0;
+}
+
+.section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.galerie-grid .galerie-item:first-child {
+  grid-column: span 2;
+  height: 500px;
+}
+
+.galerie-item {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.galerie-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.galerie-item:hover img {
+  transform: scale(1.06);
+}
+
+.galerie-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15,15,26,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.galerie-overlay i {
+  color: var(--white);
+  font-size: 1.8rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.galerie-item:hover .galerie-overlay {
+  background: rgba(15,15,26,0.5);
+}
+
+.galerie-item:hover .galerie-overlay i {
+  opacity: 1;
+}
+
+/* ÉVÉNEMENTS */
+.evenements-section {
+  position: relative;
+  background: url("/concert.jpg") center/cover no-repeat;
+  padding: 5em;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+}
+
+.evenements-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15,15,26,0.88) 0%, rgba(26,26,46,0.72) 100%);
+}
+
+.evenements-contenu {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.section-label-light {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5em;
+}
+
+.evenements-contenu h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 2em;
+}
+
+.evenements-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.evenement-item {
+  display: flex;
+  gap: 1.2em;
+  align-items: flex-start;
+}
+
+.evenement-item i {
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  margin-top: 0.2em;
+  min-width: 1.2rem;
+}
+
+.evenement-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.ev-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.evenement-item strong {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.evenement-item p {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .galerie-section {
+    padding: 6em 2em 3em;
+  }
+
+  .galerie-grid .galerie-item:first-child {
+    grid-column: span 3;
+    height: 280px;
+  }
+
+  .evenements-section {
+    padding: 3em 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .galerie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galerie-grid .galerie-item:first-child {
+    grid-column: span 2;
+    height: 240px;
+  }
+
+  .galerie-item {
+    height: 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galerie-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .galerie-grid .galerie-item:first-child,
+  .galerie-item {
+    grid-column: span 1;
+    height: 220px;
+  }
+}

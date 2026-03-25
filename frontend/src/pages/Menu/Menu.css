@@ -1,0 +1,143 @@
+.page-menu {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.menu-main {
+  flex: 1;
+  padding: 7em 5em 4em;
+  background: var(--cream);
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 3.5em;
+}
+
+.menu-header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin: 0.2em 0;
+}
+
+.menu-sous {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-top: 0.5em;
+}
+
+.section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4em;
+}
+
+.menu-categorie {
+  margin-bottom: 3.5em;
+}
+
+.menu-cat-titre {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  margin-bottom: 1.5em;
+  padding-bottom: 0.7em;
+  border-bottom: 2px solid rgba(26,26,46,0.1);
+}
+
+.menu-cat-titre i {
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.menu-cat-titre h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2em;
+}
+
+.menu-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1.4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8em;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1.5px solid transparent;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.menu-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.menu-card.featured {
+  border-color: var(--accent);
+}
+
+.menu-badge {
+  position: absolute;
+  top: -0.7em;
+  right: 1em;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2em 0.7em;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.menu-card-corps h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.4em;
+}
+
+.menu-card-corps p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.menu-prix {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-main {
+    padding: 6em 1.5em 3em;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-header h1 {
+    font-size: 2rem;
+  }
+}
