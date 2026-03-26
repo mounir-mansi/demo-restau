@@ -96,7 +96,7 @@
 
 .menu-badge {
   position: absolute;
-  top: -0.6em;
+  top: 0.6em;
   right: 0.8em;
   background: var(--accent);
   color: var(--white);
