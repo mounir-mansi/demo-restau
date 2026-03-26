@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const getResend = () => new Resend(process.env.RESEND_API_KEY);
 
 const escapeHtml = (str) =>
   str
@@ -10,7 +10,7 @@ const escapeHtml = (str) =>
     .replace(/"/g, "&quot;");
 
 export async function sendContactEmail({ name, email, message }) {
-  await resend.emails.send({
+  await getResend().emails.send({
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_CONTACT,
     subject: `Nouveau message de ${name}`,
@@ -25,7 +25,7 @@ export async function sendContactEmail({ name, email, message }) {
 }
 
 export async function sendReplyEmail({ to, name, replyText }) {
-  await resend.emails.send({
+  await getResend().emails.send({
     from: process.env.EMAIL_FROM,
     to,
     subject: `Réponse à votre message`,

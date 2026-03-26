@@ -62,7 +62,7 @@ export default function Accueil() {
           <i className="fas fa-phone" aria-hidden="true" />
           <div>
             <strong>Telefono</strong>
-            <span><a href="tel:+33600000000">06 00 00 00 00</a></span>
+            <span><a href="tel:+390112345678">011 23 45 678</a></span>
           </div>
         </div>
         <div className="bande-item">
@@ -82,7 +82,7 @@ export default function Accueil() {
             <p className="section-label">La nostra storia</p>
             <h2>Passione, generosità&nbsp;&amp; autenticità</h2>
             <p>
-              Il Bel Piatto è nato da una passione semplice&nbsp;: mangiare bene senza complicarsi la vita.
+              La Pergola è nato da una passione semplice&nbsp;: mangiare bene senza complicarsi la vita.
               Dal 2018, accogliamo famiglie, amici e curiosi in uno spazio conviviale
               dove ogni piatto è preparato con amore.
             </p>

@@ -40,12 +40,12 @@ export default function Contact() {
 
   return (
     <div className="page-contact">
+      <div className="contact-screen">
       <Navbar />
 
       <main className="contact-main">
         <div className="contact-header">
-          <p className="section-label">Dove siamo</p>
-          <h1>Contatto</h1>
+<h1>Contatto</h1>
         </div>
 
         <div className="contact-wrapper">
@@ -58,7 +58,7 @@ export default function Contact() {
                 <i className="fas fa-map-marker-alt" />
                 <div>
                   <strong>Indirizzo</strong>
-                  <span>12 rue des Saveurs<br />75001 Parigi</span>
+                  <span>Via Roma 14<br />10121 Torino</span>
                 </div>
               </div>
               <div className="contact-info-item">
@@ -73,14 +73,14 @@ export default function Contact() {
                 <i className="fas fa-phone" />
                 <div>
                   <strong>Telefono</strong>
-                  <a href="tel:+33600000000">06 00 00 00 00</a>
+                  <a href="tel:+390112345678">011 23 45 678</a>
                 </div>
               </div>
               <div className="contact-info-item">
                 <i className="fab fa-whatsapp" />
                 <div>
                   <strong>WhatsApp</strong>
-                  <a href="https://wa.me/33600000000">Scrivi un messaggio</a>
+                  <a href="https://wa.me/390112345678">Scrivi un messaggio</a>
                 </div>
               </div>
             </div>
@@ -159,6 +159,7 @@ export default function Contact() {
           </div>
         </div>
       </main>
+      </div>
 
       <Footer />
     </div>

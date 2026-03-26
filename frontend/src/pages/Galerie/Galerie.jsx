@@ -6,12 +6,11 @@ const API = import.meta.env.VITE_API_URL;
 
 // Fallback statique (public/gallery/) si aucune photo en base
 const PHOTOS_FALLBACK = [
-  { src: "/gallery/photo1.jpg", alt: "Piatto signature dello chef" },
-  { src: "/gallery/photo2.jpg", alt: "Interno del ristorante" },
-  { src: "/gallery/photo3.jpg", alt: "Burger della casa" },
-  { src: "/gallery/photo4.jpg", alt: "Dolce del giorno" },
-  { src: "/gallery/photo5.jpg", alt: "Terrazza soleggiata" },
-  { src: "/gallery/photo6.jpg", alt: "Preparazione in cucina" },
+  { src: "/main.png", alt: "Interno del ristorante La Pergola" },
+  { src: "/Gemini_Generated_Image_n9xgecn9xgecn9xg.png", alt: "Piatto signature dello chef" },
+  { src: "/Gemini_Generated_Image_vcdfusvcdfusvcdf.png", alt: "Antipasto della casa" },
+  { src: "/Gemini_Generated_Image_wqqby4wqqby4wqqb.png", alt: "Dolce del giorno" },
+  { src: "/Gemini_Generated_Image_xwymhaxwymhaxwym.png", alt: "Preparazione in cucina" },
 ];
 
 export default function Galerie() {

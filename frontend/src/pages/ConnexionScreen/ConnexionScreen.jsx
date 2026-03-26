@@ -30,7 +30,7 @@ export default function ConnexionScreen() {
     <div className="connexion-page">
       <div className="connexion-box">
         <div className="connexion-logo">
-          <span className="cx-nom">Il Bel Piatto</span>
+          <span className="cx-nom">La Pergola</span>
           <span className="cx-sous">Area amministrazione</span>
         </div>
 

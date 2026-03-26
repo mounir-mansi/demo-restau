@@ -1,4 +1,9 @@
 .page-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-screen {
   height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -11,6 +16,8 @@
   padding: var(--nav-h) 5em 1.5em;
   background: var(--cream);
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-header {
@@ -39,6 +46,9 @@
   gap: 2.5em;
   max-width: 1100px;
   margin: 0 auto;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
 }
 
 .contact-info-block h2,
@@ -93,24 +103,27 @@
   color: var(--accent);
 }
 
+.contact-info-block {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-map {
   border-radius: 10px;
   overflow: hidden;
+  flex: 1;
+  min-height: 0;
 }
 
-/* Conteneur aspect-ratio pour éviter CLS */
 .contact-map-ratio {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 5;
+  height: 100%;
 }
 
 .contact-map-ratio iframe {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
+  display: block;
 }
 
 /* FORMULAIRE */
@@ -119,6 +132,18 @@
   padding: 1.5em;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-block form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-block form .btn-submit {
+  margin-top: auto;
 }
 
 .form-groupe {

@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-logo">
         <Link to="/" onClick={fermer}>
-          <span className="navbar-nom">Il Bel Piatto</span>
+          <span className="navbar-nom">La Pergola</span>
           <span className="navbar-sous">Ristorante &amp; Snack</span>
         </Link>
       </div>
@@ -66,8 +66,8 @@ export default function Navbar() {
           </>
         )}
         <li>
-          <a href="tel:+33600000000" className="navbar-tel" onClick={fermer}>
-            <i className="fas fa-phone" /> 06 00 00 00 00
+          <a href="tel:+390112345678" className="navbar-tel" onClick={fermer}>
+            <i className="fas fa-phone" /> 011 23 45 678
           </a>
         </li>
       </ul>

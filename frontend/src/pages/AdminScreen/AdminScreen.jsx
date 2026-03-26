@@ -87,7 +87,7 @@ export default function AdminScreen() {
     <div className="admin-page">
       {/* HEADER */}
       <header className="admin-header">
-        <span className="admin-logo">Il Bel Piatto — Admin</span>
+        <span className="admin-logo">La Pergola — Admin</span>
         <div className="admin-header-actions">
           <Link to="/" className="admin-voir-site">Vedi il sito</Link>
           <button className="admin-logout" onClick={logout}>Disconnetti</button>
