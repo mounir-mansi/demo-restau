@@ -315,6 +315,7 @@
   cursor: pointer;
   font-size: 0.88rem;
   transition: border-color 0.2s;
+  height: 100%;
 }
 
 .admin-galerie-add:hover {
@@ -423,6 +424,10 @@
 
   .admin-galerie-main {
     height: 280px;
+  }
+
+  .admin-galerie-add {
+    height: 120px;
   }
 
   .admin-galerie-grid {
