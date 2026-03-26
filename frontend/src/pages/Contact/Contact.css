@@ -227,13 +227,24 @@
     overflow: visible;
   }
 
+  .contact-screen {
+    height: auto;
+    overflow: visible;
+  }
+
   .contact-main {
     overflow: visible;
     padding: var(--nav-h) 2em 2em;
   }
 
+  .contact-map {
+    flex: none;
+    height: 200px;
+  }
+
   .contact-wrapper {
     grid-template-columns: 1fr;
+    flex: none;
   }
 }
 
