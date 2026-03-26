@@ -44,34 +44,28 @@ export default function Accueil() {
 
         {/* BANDE INFO */}
         <div className="bande-info" role="complementary" aria-label="Informazioni pratiche">
-        <div className="bande-item">
-          <i className="fas fa-map-marker-alt" aria-hidden="true" />
-          <div>
-            <strong>Indirizzo</strong>
-            <span>12 rue des Saveurs, Parigi 1°</span>
+          <div className="bande-item">
+            <i className="fas fa-map-marker-alt" aria-hidden="true" />
+            <div>
+              <strong>Indirizzo</strong>
+              <span>Via Roma 14, Torino</span>
+            </div>
           </div>
-        </div>
-        <div className="bande-item">
-          <i className="fas fa-clock" aria-hidden="true" />
-          <div>
-            <strong>Orari</strong>
-            <span>Lun–Sab&nbsp;: 11:00–23:00 &nbsp;|&nbsp; Dom&nbsp;: 12:00–22:00</span>
+          <div className="bande-item">
+            <i className="fas fa-clock" aria-hidden="true" />
+            <div>
+              <strong>Orari</strong>
+              <span>Lun–Sab&nbsp;: 11:00–23:00 &nbsp;|&nbsp; Dom&nbsp;: 12:00–22:00</span>
+            </div>
           </div>
-        </div>
-        <div className="bande-item">
-          <i className="fas fa-phone" aria-hidden="true" />
-          <div>
-            <strong>Telefono</strong>
-            <span><a href="tel:+390112345678">011 23 45 678</a></span>
+          <div className="bande-contacts">
+            <a href="tel:+390112345678" className="bande-btn">
+              <i className="fas fa-phone" aria-hidden="true" /> 011 23 45 678
+            </a>
+            <a href="https://wa.me/390112345678" className="bande-btn bande-btn--wa">
+              <i className="fab fa-whatsapp" aria-hidden="true" /> WhatsApp
+            </a>
           </div>
-        </div>
-        <div className="bande-item">
-          <i className="fab fa-whatsapp" aria-hidden="true" />
-          <div>
-            <strong>WhatsApp</strong>
-            <span><a href="https://wa.me/33600000000">Scrivi un messaggio</a></span>
-          </div>
-        </div>
         </div>{/* fin bande-info */}
       </div>{/* fin above-fold */}
 
@@ -96,7 +90,7 @@ export default function Accueil() {
           </div>
           <div className="apropos-photo">
             <img
-              src={sections["chi-siamo"] || "/chi-siamo.jpg"}
+              src={sections["chi-siamo"] || "/Gemini_Generated_Image_vcdfusvcdfusvcdf.png"}
               alt="Il nostro team in cucina"
               loading="lazy"
               width="600"
