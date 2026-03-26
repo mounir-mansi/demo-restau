@@ -11,7 +11,7 @@ export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <a href="#main-content" className="skip-link">Aller au contenu principal</a>
+        <a href="#main-content" className="skip-link">Vai al contenuto principale</a>
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/menu" element={<Menu />} />

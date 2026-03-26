@@ -4,10 +4,10 @@ import { useAuth } from "../../utils/useConnecte.jsx";
 import "./Navbar.css";
 
 const LIENS = [
-  { label: "Accueil", to: "/" },
+  { label: "Home", to: "/" },
   { label: "Menu", to: "/menu" },
-  { label: "Galerie", to: "/galerie" },
-  { label: "Contact", to: "/contact" },
+  { label: "Galleria", to: "/galerie" },
+  { label: "Contatto", to: "/contact" },
 ];
 
 export default function Navbar() {
@@ -23,21 +23,21 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-logo">
         <Link to="/" onClick={fermer}>
-          <span className="navbar-nom">La Belle Assiette</span>
-          <span className="navbar-sous">Restaurant &amp; Snack</span>
+          <span className="navbar-nom">Il Bel Piatto</span>
+          <span className="navbar-sous">Ristorante &amp; Snack</span>
         </Link>
       </div>
 
       <button
         className="navbar-burger"
         onClick={() => setOuvert((v) => !v)}
-        aria-label="Menu"
+        aria-label="Apri menu"
         aria-expanded={ouvert}
       >
         <i className={ouvert ? "fas fa-times" : "fas fa-bars"} />
       </button>
 
-      <ul className={`navbar-liens${ouvert ? " ouvert" : ""}`} aria-label="Navigation principale">
+      <ul className={`navbar-liens${ouvert ? " ouvert" : ""}`} aria-label="Navigazione principale">
         {LIENS.map((l) => (
           <li key={l.to}>
             <Link
@@ -55,10 +55,11 @@ export default function Navbar() {
               <Link to="/admin" onClick={fermer}>
                 Admin
               </Link>
+
             </li>
             <li>
               <button className="navbar-logout" onClick={() => { logout(); fermer(); }}>
-                Déconnexion
+                Disconnetti
               </button>
             </li>
           </>

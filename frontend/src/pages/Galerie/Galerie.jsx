@@ -7,18 +7,18 @@ const API = import.meta.env.VITE_API_URL;
 
 // Fallback statique (public/gallery/) si aucune photo en base
 const PHOTOS_FALLBACK = [
-  { src: "/gallery/photo1.jpg", alt: "Plat signature du chef" },
-  { src: "/gallery/photo2.jpg", alt: "Intérieur du restaurant" },
-  { src: "/gallery/photo3.jpg", alt: "Burger maison" },
-  { src: "/gallery/photo4.jpg", alt: "Dessert du jour" },
-  { src: "/gallery/photo5.jpg", alt: "Terrasse ensoleillée" },
-  { src: "/gallery/photo6.jpg", alt: "Préparation en cuisine" },
+  { src: "/gallery/photo1.jpg", alt: "Piatto signature dello chef" },
+  { src: "/gallery/photo2.jpg", alt: "Interno del ristorante" },
+  { src: "/gallery/photo3.jpg", alt: "Burger della casa" },
+  { src: "/gallery/photo4.jpg", alt: "Dolce del giorno" },
+  { src: "/gallery/photo5.jpg", alt: "Terrazza soleggiata" },
+  { src: "/gallery/photo6.jpg", alt: "Preparazione in cucina" },
 ];
 
 const EVENEMENTS = [
-  { date: "Tous les vendredis", titre: "Soirée jazz", desc: "Concert live dès 20h — entrée libre" },
-  { date: "Samedi 12 avril", titre: "Brunch dominical", desc: "Formule brunch 12h–15h sur réservation" },
-  { date: "Mercredi 23 avril", titre: "Soirée tapas", desc: "Menu tapas et vins du monde — 18h–23h" },
+  { date: "Ogni venerdì", titre: "Serata jazz", desc: "Concerto live dalle 20:00 — ingresso libero" },
+  { date: "Sabato 12 aprile", titre: "Brunch domenicale", desc: "Formula brunch 12:00–15:00 su prenotazione" },
+  { date: "Mercoledì 23 aprile", titre: "Serata tapas", desc: "Menu tapas e vini del mondo — 18:00–23:00" },
 ];
 
 export default function Galerie() {
@@ -57,10 +57,10 @@ export default function Galerie() {
 
       <main id="main-content">
         {/* GALERIE */}
-        <section className="galerie-section" aria-label="Galerie photos">
+        <section className="galerie-section" aria-label="Galleria foto">
           <div className="galerie-header">
-            <p className="section-label">Notre univers</p>
-            <h1>Galerie</h1>
+            <p className="section-label">Il nostro mondo</p>
+            <h1>Galleria</h1>
           </div>
 
           <div className="galerie-grid">
@@ -82,11 +82,11 @@ export default function Galerie() {
         </section>
 
         {/* ÉVÉNEMENTS */}
-        <section className="evenements-section" style={evenementsStyle} aria-label="Événements et soirées">
+        <section className="evenements-section" style={evenementsStyle} aria-label="Eventi e serate">
           <div className="evenements-overlay" aria-hidden="true" />
           <div className="evenements-contenu">
             <p className="section-label-light">Agenda</p>
-            <h2>Événements &amp; soirées</h2>
+            <h2>Eventi &amp; serate</h2>
             <ul className="evenements-liste">
               {EVENEMENTS.map((ev, i) => (
                 <li key={i} className="evenement-item">

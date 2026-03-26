@@ -45,7 +45,7 @@ export default function AdminScreen() {
   }
 
   async function supprimerMessage(id) {
-    if (!confirm("Supprimer ce message ?")) return;
+    if (!confirm("Eliminare questo messaggio?")) return;
     await fetch(`${API}/admin/messages/${id}`, { method: "DELETE", credentials: "include" });
     setMessages((m) => m.filter((msg) => msg.id !== id));
   }
@@ -69,7 +69,7 @@ export default function AdminScreen() {
   }
 
   async function supprimerPhoto(key) {
-    if (!confirm("Supprimer cette photo ?")) return;
+    if (!confirm("Eliminare questa foto?")) return;
     await fetch(`${API}/admin/gallery`, {
       method: "DELETE",
       credentials: "include",
@@ -87,10 +87,10 @@ export default function AdminScreen() {
     <div className="admin-page">
       {/* HEADER */}
       <header className="admin-header">
-        <span className="admin-logo">La Belle Assiette — Admin</span>
+        <span className="admin-logo">Il Bel Piatto — Admin</span>
         <div className="admin-header-actions">
-          <Link to="/" className="admin-voir-site">Voir le site</Link>
-          <button className="admin-logout" onClick={logout}>Déconnexion</button>
+          <Link to="/" className="admin-voir-site">Vedi il sito</Link>
+          <button className="admin-logout" onClick={logout}>Disconnetti</button>
         </div>
       </header>
 
@@ -100,19 +100,19 @@ export default function AdminScreen() {
           className={onglet === "messages" ? "actif" : ""}
           onClick={() => setOnglet("messages")}
         >
-          Messages {nonLus > 0 && <span className="badge">{nonLus}</span>}
+          Messaggi {nonLus > 0 && <span className="badge">{nonLus}</span>}
         </button>
         <button
           className={onglet === "galerie" ? "actif" : ""}
           onClick={() => setOnglet("galerie")}
         >
-          Galerie
+          Galleria
         </button>
         <button
           className={onglet === "sections" ? "actif" : ""}
           onClick={() => setOnglet("sections")}
         >
-          Photos sections
+          Foto sezioni
         </button>
       </nav>
 
@@ -120,7 +120,7 @@ export default function AdminScreen() {
         {/* MESSAGES */}
         {onglet === "messages" && (
           <div className="admin-messages">
-            {messages.length === 0 && <p className="admin-vide">Aucun message.</p>}
+            {messages.length === 0 && <p className="admin-vide">Nessun messaggio.</p>}
             {messages.map((msg) => (
               <div key={msg.id} className={`admin-msg-card${!msg.read ? " non-lu" : ""}`}>
                 <div className="admin-msg-header">
@@ -129,7 +129,7 @@ export default function AdminScreen() {
                     <strong>{msg.name}</strong>
                     <span className="msg-email">{msg.email}</span>
                   </div>
-                  <span className="msg-date">{new Date(msg.createdAt).toLocaleDateString("fr-FR")}</span>
+                  <span className="msg-date">{new Date(msg.createdAt).toLocaleDateString("it-IT")}</span>
                 </div>
                 <div className="admin-msg-corps">
                   <p>{msg.message}</p>
@@ -137,11 +137,11 @@ export default function AdminScreen() {
                 <div className="admin-msg-actions">
                   {!msg.read && (
                     <button className="btn-lu" onClick={() => marquerLu(msg.id)}>
-                      Marquer lu
+                      Segna come letto
                     </button>
                   )}
                   <button className="btn-suppr" onClick={() => supprimerMessage(msg.id)}>
-                    Supprimer
+                    Elimina
                   </button>
                 </div>
               </div>
@@ -156,14 +156,14 @@ export default function AdminScreen() {
               <div className="admin-galerie-main">
                 {gallery.main ? (
                   <>
-                    <img src={gallery.main.src} alt="Photo principale" />
-                    <span className="galerie-label">Photo principale</span>
+                    <img src={gallery.main.src} alt="Foto principale" />
+                    <span className="galerie-label">Foto principale</span>
                     <div className="galerie-btns">
-                      <label className="btn-galerie-icone" title="Changer">
+                      <label className="btn-galerie-icone" title="Cambia">
                         <i className="fas fa-pencil-alt" />
                         <input type="file" accept="image/*" onChange={(e) => uploadPhoto(e, "/admin/gallery/main")} hidden />
                       </label>
-                      <button className="btn-galerie-icone suppr" onClick={() => supprimerPhoto(gallery.main.key)} title="Supprimer">
+                      <button className="btn-galerie-icone suppr" onClick={() => supprimerPhoto(gallery.main.key)} title="Elimina">
                         <i className="fas fa-times" />
                       </button>
                     </div>
@@ -171,14 +171,14 @@ export default function AdminScreen() {
                 ) : (
                   <label className="galerie-placeholder">
                     <i className="fas fa-plus" />
-                    <span>Ajouter photo principale</span>
+                    <span>Aggiungi foto principale</span>
                     <input type="file" accept="image/*" onChange={(e) => uploadPhoto(e, "/admin/gallery/main")} hidden />
                   </label>
                 )}
               </div>
               <label className="admin-galerie-add">
                 <i className="fas fa-plus" />
-                <span>Ajouter une photo</span>
+                <span>Aggiungi una foto</span>
                 <input type="file" accept="image/*" onChange={(e) => uploadPhoto(e, "/admin/gallery/upload")} hidden />
               </label>
             </div>
@@ -186,13 +186,13 @@ export default function AdminScreen() {
             <div className="admin-galerie-grid">
               {gallery.photos.map((photo) => (
                 <div key={photo.key} className="admin-galerie-item">
-                  <img src={photo.src} alt="Photo galerie" />
+                  <img src={photo.src} alt="Foto galleria" />
                   <div className="galerie-btns">
-                    <label className="btn-galerie-icone" title="Changer">
+                    <label className="btn-galerie-icone" title="Cambia">
                       <i className="fas fa-pencil-alt" />
                       <input type="file" accept="image/*" onChange={(e) => uploadPhoto(e, "/admin/gallery/upload")} hidden />
                     </label>
-                    <button className="btn-galerie-icone suppr" onClick={() => supprimerPhoto(photo.key)} title="Supprimer">
+                    <button className="btn-galerie-icone suppr" onClick={() => supprimerPhoto(photo.key)} title="Elimina">
                       <i className="fas fa-times" />
                     </button>
                   </div>
@@ -206,9 +206,9 @@ export default function AdminScreen() {
         {onglet === "sections" && (
           <div className="admin-sections">
             {[
-              { slot: "hero", label: "Hero (Accueil)" },
-              { slot: "chi-siamo", label: "À propos" },
-              { slot: "concert", label: "Événements" },
+              { slot: "hero", label: "Hero (Home)" },
+              { slot: "chi-siamo", label: "Chi siamo" },
+              { slot: "concert", label: "Eventi" },
             ].map(({ slot, label }) => (
               <div key={slot} className="admin-section-card">
                 <span className="section-card-label">{label}</span>
@@ -221,7 +221,7 @@ export default function AdminScreen() {
                 )}
                 <label className="btn-section">
                   <i className="fas fa-upload" />
-                  {sections[slot] ? "Changer" : "Charger"}
+                  {sections[slot] ? "Cambia" : "Carica"}
                   <input type="file" accept="image/*" onChange={(e) => uploadSection(e, slot)} hidden />
                 </label>
               </div>

@@ -28,39 +28,39 @@ export default function Accueil() {
       <section className="hero" id="home" style={heroStyle}>
         <div className="hero-overlay" />
         <div className="hero-contenu">
-          <p className="hero-tag">Restaurant &amp; Snack</p>
-          <h1>Une cuisine qui vous ressemble</h1>
+          <p className="hero-tag">Ristorante &amp; Snack</p>
+          <h1>Una cucina che ti assomiglia</h1>
           <p className="hero-desc">
-            Des saveurs généreuses, des produits frais, une ambiance chaleureuse
-            au cœur de la ville.
+            Sapori generosi, prodotti freschi, un&apos;atmosfera accogliente
+            nel cuore della città.
           </p>
           <div className="hero-ctas">
-            <Link to="/menu" className="btn-primary">Voir notre menu</Link>
-            <Link to="/contact" className="btn-outline">Nous contacter</Link>
+            <Link to="/menu" className="btn-primary">Vedi il menu</Link>
+            <Link to="/contact" className="btn-outline">Contattaci</Link>
           </div>
         </div>
       </section>
 
       {/* BANDE INFO */}
-      <div className="bande-info" role="complementary" aria-label="Informations pratiques">
+      <div className="bande-info" role="complementary" aria-label="Informazioni pratiche">
         <div className="bande-item">
           <i className="fas fa-map-marker-alt" aria-hidden="true" />
           <div>
-            <strong>Adresse</strong>
-            <span>12 rue des Saveurs, Paris 1er</span>
+            <strong>Indirizzo</strong>
+            <span>12 rue des Saveurs, Parigi 1°</span>
           </div>
         </div>
         <div className="bande-item">
           <i className="fas fa-clock" aria-hidden="true" />
           <div>
-            <strong>Horaires</strong>
-            <span>Lun–Sam&nbsp;: 11h–23h &nbsp;|&nbsp; Dim&nbsp;: 12h–22h</span>
+            <strong>Orari</strong>
+            <span>Lun–Sab&nbsp;: 11:00–23:00 &nbsp;|&nbsp; Dom&nbsp;: 12:00–22:00</span>
           </div>
         </div>
         <div className="bande-item">
           <i className="fas fa-phone" aria-hidden="true" />
           <div>
-            <strong>Téléphone</strong>
+            <strong>Telefono</strong>
             <span><a href="tel:+33600000000">06 00 00 00 00</a></span>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function Accueil() {
           <i className="fab fa-whatsapp" aria-hidden="true" />
           <div>
             <strong>WhatsApp</strong>
-            <span><a href="https://wa.me/33600000000">Écrire un message</a></span>
+            <span><a href="https://wa.me/33600000000">Scrivi un messaggio</a></span>
           </div>
         </div>
       </div>
@@ -77,25 +77,25 @@ export default function Accueil() {
         {/* À PROPOS */}
         <section className="apropos" id="apropos">
           <div className="apropos-texte">
-            <p className="section-label">Notre histoire</p>
-            <h2>Passion, générosité&nbsp;&amp; authenticité</h2>
+            <p className="section-label">La nostra storia</p>
+            <h2>Passione, generosità&nbsp;&amp; autenticità</h2>
             <p>
-              La Belle Assiette est née d'une passion simple&nbsp;: bien manger sans se prendre la tête.
-              Depuis 2018, nous accueillons les familles, les amis et les curieux dans un espace
-              convivial où chaque plat est préparé avec amour.
+              Il Bel Piatto è nato da una passione semplice&nbsp;: mangiare bene senza complicarsi la vita.
+              Dal 2018, accogliamo famiglie, amici e curiosi in uno spazio conviviale
+              dove ogni piatto è preparato con amore.
             </p>
             <p>
-              Notre cuisine mêle influences méditerranéennes et saveurs du monde, avec des produits
-              locaux sélectionnés chaque matin. Restauration rapide ou repas assis — vous êtes chez vous.
+              La nostra cucina mescola influenze mediterranee e sapori del mondo, con prodotti
+              locali selezionati ogni mattina. Pranzo veloce o pasto seduto — siete a casa vostra.
             </p>
             <Link to="/menu" className="btn-primary" style={{ marginTop: "1.5em", display: "inline-block" }}>
-              Découvrir le menu
+              Scopri il menu
             </Link>
           </div>
           <div className="apropos-photo">
             <img
               src={sections["chi-siamo"] || "/chi-siamo.jpg"}
-              alt="Notre équipe en cuisine"
+              alt="Il nostro team in cucina"
               loading="lazy"
               width="600"
               height="450"

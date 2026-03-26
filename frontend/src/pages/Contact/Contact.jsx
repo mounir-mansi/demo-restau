@@ -26,13 +26,13 @@ export default function Contact() {
       });
       const data = await res.json();
       if (res.ok) {
-        setStatut({ ok: true, msg: "Message envoyé\u00a0! Nous vous répondrons sous 24h." });
+        setStatut({ ok: true, msg: "Messaggio inviato\u00a0! Ti risponderemo entro 24 ore." });
         setForm({ name: "", email: "", message: "" });
       } else {
-        setStatut({ ok: false, msg: data.error || "Une erreur est survenue." });
+        setStatut({ ok: false, msg: data.error || "Si è verificato un errore." });
       }
     } catch {
-      setStatut({ ok: false, msg: "Impossible d'envoyer le message. Réessayez." });
+      setStatut({ ok: false, msg: "Impossibile inviare il messaggio. Riprova." });
     } finally {
       setEnvoi(false);
     }
@@ -44,35 +44,35 @@ export default function Contact() {
 
       <main className="contact-main">
         <div className="contact-header">
-          <p className="section-label">Nous trouver</p>
-          <h1>Contact</h1>
+          <p className="section-label">Dove siamo</p>
+          <h1>Contatto</h1>
         </div>
 
         <div className="contact-wrapper">
           {/* INFOS */}
           <div className="contact-info-block">
-            <h2>Venez nous voir</h2>
+            <h2>Vieni a trovarci</h2>
 
             <div className="contact-info-liste">
               <div className="contact-info-item">
                 <i className="fas fa-map-marker-alt" />
                 <div>
-                  <strong>Adresse</strong>
-                  <span>12 rue des Saveurs<br />75001 Paris</span>
+                  <strong>Indirizzo</strong>
+                  <span>12 rue des Saveurs<br />75001 Parigi</span>
                 </div>
               </div>
               <div className="contact-info-item">
                 <i className="fas fa-clock" />
                 <div>
-                  <strong>Horaires</strong>
-                  <span>Lun–Sam&nbsp;: 11h – 23h</span>
-                  <span>Dimanche&nbsp;: 12h – 22h</span>
+                  <strong>Orari</strong>
+                  <span>Lun–Sab&nbsp;: 11:00 – 23:00</span>
+                  <span>Domenica&nbsp;: 12:00 – 22:00</span>
                 </div>
               </div>
               <div className="contact-info-item">
                 <i className="fas fa-phone" />
                 <div>
-                  <strong>Téléphone</strong>
+                  <strong>Telefono</strong>
                   <a href="tel:+33600000000">06 00 00 00 00</a>
                 </div>
               </div>
@@ -80,7 +80,7 @@ export default function Contact() {
                 <i className="fab fa-whatsapp" />
                 <div>
                   <strong>WhatsApp</strong>
-                  <a href="https://wa.me/33600000000">Écrire un message</a>
+                  <a href="https://wa.me/33600000000">Scrivi un messaggio</a>
                 </div>
               </div>
             </div>
@@ -89,12 +89,12 @@ export default function Contact() {
             <div className="contact-map">
               <div className="contact-map-ratio">
                 <iframe
-                  title="Localisation du restaurant"
+                  title="Posizione del ristorante"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9!2d2.3465!3d48.8604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzM3LjQiTiAywrAyMCc0Ny40IkU!5e0!3m2!1sfr!2sfr!4v1"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  aria-label="Carte Google Maps — 12 rue des Saveurs, Paris"
+                  aria-label="Mappa Google Maps — 12 rue des Saveurs, Parigi"
                 />
               </div>
             </div>
@@ -102,17 +102,17 @@ export default function Contact() {
 
           {/* FORMULAIRE */}
           <div className="contact-form-block">
-            <h2>Envoyez-nous un message</h2>
+            <h2>Inviaci un messaggio</h2>
             <form onSubmit={handleSubmit} noValidate>
               <div className="form-groupe">
-                <label htmlFor="name">Nom complet</label>
+                <label htmlFor="name">Nome completo</label>
                 <input
                   id="name"
                   name="name"
                   type="text"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Jean Dupont"
+                  placeholder="Mario Rossi"
                   required
                   aria-required="true"
                 />
@@ -131,14 +131,14 @@ export default function Contact() {
                 />
               </div>
               <div className="form-groupe">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">Messaggio</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="Votre message..."
+                  placeholder="Il tuo messaggio..."
                   required
                   aria-required="true"
                 />
@@ -153,7 +153,7 @@ export default function Contact() {
               </p>
 
               <button type="submit" className="btn-submit" disabled={envoi}>
-                {envoi ? "Envoi en cours…" : "Envoyer le message"}
+                {envoi ? "Invio in corso…" : "Invia il messaggio"}
               </button>
             </form>
           </div>

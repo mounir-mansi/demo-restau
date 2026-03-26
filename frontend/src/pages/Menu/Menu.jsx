@@ -4,45 +4,45 @@ import "./Menu.css";
 
 const MENU = [
   {
-    categorie: "Entrées",
+    categorie: "Antipasti",
     icone: "fas fa-leaf",
     items: [
-      { nom: "Salade fraîcheur", desc: "Roquette, tomates cerises, parmesan, vinaigrette miel-moutarde", prix: "7,50€", featured: false },
-      { nom: "Bruschetta maison", desc: "Pain grillé, tomates concassées, basilic frais, huile d'olive", prix: "6,00€", featured: false },
-      { nom: "Soupe du jour", desc: "Recette du chef, servie avec pain artisanal", prix: "5,50€", featured: false },
-      { nom: "Assiette mixte", desc: "Charcuteries sélectionnées, cornichons, pain grillé", prix: "9,00€", featured: true },
+      { nom: "Insalata fresca", desc: "Rucola, pomodorini, parmigiano, vinaigrette miele e senape", prix: "7,50€", featured: false },
+      { nom: "Bruschetta della casa", desc: "Pane abbrustolito, pomodori a cubetti, basilico fresco, olio d'oliva", prix: "6,00€", featured: false },
+      { nom: "Zuppa del giorno", desc: "Ricetta dello chef, servita con pane artigianale", prix: "5,50€", featured: false },
+      { nom: "Tagliere misto", desc: "Salumi selezionati, cetriolini, pane abbrustolito", prix: "9,00€", featured: true },
     ],
   },
   {
-    categorie: "Plats",
+    categorie: "Piatti principali",
     icone: "fas fa-utensils",
     items: [
-      { nom: "Burger Signature", desc: "Steak haché 180g, cheddar, oignons caramélisés, sauce maison, frites", prix: "14,50€", featured: true },
-      { nom: "Poulet rôti & légumes", desc: "Demi-poulet fermier, légumes de saison, jus de cuisson", prix: "13,00€", featured: false },
-      { nom: "Pâtes carbonara", desc: "Pâtes fraîches, lardons fumés, parmesan, crème, poivre noir", prix: "11,50€", featured: false },
-      { nom: "Tagine d'agneau", desc: "Mijotage lent, pruneaux, amandes, semoule au beurre", prix: "15,00€", featured: false },
-      { nom: "Wrap végétarien", desc: "Houmous, falafel, légumes grillés, sauce yaourt-citron", prix: "10,00€", featured: false },
-      { nom: "Plateau snack", desc: "Hot-dog artisanal, frites, salade, sauce au choix", prix: "9,50€", featured: false },
+      { nom: "Burger della casa", desc: "Hamburger 180g, cheddar, cipolle caramellate, salsa della casa, patatine", prix: "14,50€", featured: true },
+      { nom: "Pollo arrosto & verdure", desc: "Mezzo pollo ruspante, verdure di stagione, fondo di cottura", prix: "13,00€", featured: false },
+      { nom: "Pasta alla carbonara", desc: "Pasta fresca, guanciale affumicato, pecorino, uovo, pepe nero", prix: "11,50€", featured: false },
+      { nom: "Tajine di agnello", desc: "Cottura lenta, prugne secche, mandorle, couscous al burro", prix: "15,00€", featured: false },
+      { nom: "Wrap vegetariano", desc: "Hummus, falafel, verdure grigliate, salsa yogurt e limone", prix: "10,00€", featured: false },
+      { nom: "Piatto snack", desc: "Hot-dog artigianale, patatine, insalata, salsa a scelta", prix: "9,50€", featured: false },
     ],
   },
   {
-    categorie: "Desserts",
+    categorie: "Dolci",
     icone: "fas fa-ice-cream",
     items: [
-      { nom: "Fondant chocolat", desc: "Cœur coulant, glace vanille, caramel au beurre salé", prix: "6,50€", featured: true },
-      { nom: "Tarte du jour", desc: "Selon arrivage, demandez au serveur", prix: "5,00€", featured: false },
-      { nom: "Tiramisu maison", desc: "Recette traditionnelle, mascarpone, café, biscuits", prix: "6,00€", featured: false },
-      { nom: "Coupe de glaces", desc: "3 boules au choix, chantilly, coulis de fruits rouges", prix: "5,50€", featured: false },
+      { nom: "Tortino al cioccolato", desc: "Cuore fondente, gelato alla vaniglia, caramello al burro salato", prix: "6,50€", featured: true },
+      { nom: "Torta del giorno", desc: "Secondo disponibilità, chiedi al cameriere", prix: "5,00€", featured: false },
+      { nom: "Tiramisù della casa", desc: "Ricetta tradizionale, mascarpone, caffè, savoiardi", prix: "6,00€", featured: false },
+      { nom: "Coppa gelato", desc: "3 palline a scelta, panna montata, coulis di frutti rossi", prix: "5,50€", featured: false },
     ],
   },
   {
-    categorie: "Boissons",
+    categorie: "Bevande",
     icone: "fas fa-glass-water",
     items: [
-      { nom: "Jus de fruits frais", desc: "Orange, pomme, mangue ou mix du moment", prix: "4,00€", featured: false },
-      { nom: "Sodas & Eau", desc: "Coca, Fanta, Sprite, San Pellegrino, Evian", prix: "2,50€", featured: false },
-      { nom: "Café & Thé", desc: "Espresso, cappuccino, thé à la menthe, infusions", prix: "2,00€", featured: false },
-      { nom: "Smoothie maison", desc: "Fruits mixés du jour, sans sucre ajouté", prix: "5,50€", featured: true },
+      { nom: "Succo di frutta fresco", desc: "Arancia, mela, mango o mix del momento", prix: "4,00€", featured: false },
+      { nom: "Bibite & Acqua", desc: "Coca, Fanta, Sprite, San Pellegrino, Evian", prix: "2,50€", featured: false },
+      { nom: "Caffè & Tè", desc: "Espresso, cappuccino, tè alla menta, tisane", prix: "2,00€", featured: false },
+      { nom: "Smoothie della casa", desc: "Frutta frullata del giorno, senza zuccheri aggiunti", prix: "5,50€", featured: true },
     ],
   },
 ];
@@ -54,9 +54,9 @@ export default function Menu() {
 
       <main className="menu-main">
         <div className="menu-header">
-          <p className="section-label">Notre carte</p>
-          <h1>Le menu</h1>
-          <p className="menu-sous">Fait maison, produits frais sélectionnés chaque matin</p>
+          <p className="section-label">La nostra carta</p>
+          <h1>Il Menu</h1>
+          <p className="menu-sous">Fatto in casa, prodotti freschi selezionati ogni mattina</p>
         </div>
 
         {MENU.map((cat) => (
@@ -68,7 +68,7 @@ export default function Menu() {
             <div className="menu-grid">
               {cat.items.map((item) => (
                 <div key={item.nom} className={`menu-card${item.featured ? " featured" : ""}`}>
-                  {item.featured && <span className="menu-badge">Coup de cœur</span>}
+                  {item.featured && <span className="menu-badge">Il preferito</span>}
                   <div className="menu-card-corps">
                     <h3>{item.nom}</h3>
                     <p>{item.desc}</p>

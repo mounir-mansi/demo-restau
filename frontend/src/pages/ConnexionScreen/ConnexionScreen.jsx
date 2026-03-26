@@ -30,13 +30,13 @@ export default function ConnexionScreen() {
     <div className="connexion-page">
       <div className="connexion-box">
         <div className="connexion-logo">
-          <span className="cx-nom">La Belle Assiette</span>
-          <span className="cx-sous">Espace administration</span>
+          <span className="cx-nom">Il Bel Piatto</span>
+          <span className="cx-sous">Area amministrazione</span>
         </div>
 
         <form onSubmit={handleSubmit} noValidate>
           <div className="cx-groupe">
-            <label htmlFor="login">Identifiant</label>
+            <label htmlFor="login">Nome utente</label>
             <input
               id="login"
               type="text"
@@ -47,7 +47,7 @@ export default function ConnexionScreen() {
             />
           </div>
           <div className="cx-groupe">
-            <label htmlFor="password">Mot de passe</label>
+            <label htmlFor="password">Password</label>
             <div className="cx-password">
               <input
                 id="password"
@@ -61,7 +61,7 @@ export default function ConnexionScreen() {
                 type="button"
                 className="cx-eye"
                 onClick={() => setAfficher((v) => !v)}
-                aria-label={afficher ? "Masquer" : "Afficher"}
+                aria-label={afficher ? "Nascondi" : "Mostra"}
               >
                 <i className={afficher ? "fas fa-eye-slash" : "fas fa-eye"} />
               </button>
@@ -73,7 +73,7 @@ export default function ConnexionScreen() {
           </p>
 
           <button type="submit" className="cx-btn" disabled={chargement}>
-            {chargement ? "Connexion…" : "Se connecter"}
+            {chargement ? "Accesso…" : "Accedi"}
           </button>
         </form>
       </div>
