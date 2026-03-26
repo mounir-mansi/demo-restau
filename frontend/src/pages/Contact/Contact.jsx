@@ -90,11 +90,11 @@ export default function Contact() {
               <div className="contact-map-ratio">
                 <iframe
                   title="Posizione del ristorante"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9!2d2.3465!3d48.8604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzM3LjQiTiAywrAyMCc0Ny40IkU!5e0!3m2!1sfr!2sfr!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2817.6!2d7.6857!3d45.0703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47886d6b89f6f5e9%3A0x0!2sVia+Roma+14%2C+10121+Torino+TO!5e0!3m2!1sit!2sit!4v1"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  aria-label="Mappa Google Maps — 12 rue des Saveurs, Parigi"
+                  aria-label="Mappa Google Maps — Via Roma 14, Torino"
                 />
               </div>
             </div>
