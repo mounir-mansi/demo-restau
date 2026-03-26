@@ -10,6 +10,9 @@
   --text-light: #6b7280;
   --white: #ffffff;
 
+  /* Hauteur navbar — utilisée pour les calculs above-fold */
+  --nav-h: 3.5rem;
+
   /* Typographie fluide (responsive-design skill) */
   --text-sm:   clamp(0.82rem,  0.78rem + 0.2vw,  0.95rem);
   --text-base: clamp(0.95rem,  0.88rem + 0.35vw, 1.1rem);

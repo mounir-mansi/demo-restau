@@ -1,14 +1,21 @@
 .page-accueil {
   display: flex;
   flex-direction: column;
-  min-height: 100svh;
+}
+
+/* ── ABOVE FOLD ─────────────────────────────── */
+.above-fold {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* HERO */
 .hero {
   position: relative;
-  min-height: calc(100vh - 2.8em);
-  padding-top: 65px;
+  flex: 1;
+  min-height: 0;
+  padding-top: var(--nav-h);
   background: url("/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -33,7 +40,7 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 0.8em;
+  margin-bottom: 0.6em;
 }
 
 .hero-contenu h1 {
@@ -46,9 +53,9 @@
 
 .hero-desc {
   color: rgba(255,255,255,0.82);
-  font-size: 1.1rem;
+  font-size: var(--text-base);
   line-height: 1.6;
-  margin-bottom: 2em;
+  margin-bottom: 1.6em;
 }
 
 .hero-ctas {
@@ -91,12 +98,13 @@
 
 /* BANDE INFO */
 .bande-info {
+  flex-shrink: 0;
   background: var(--navy);
   color: var(--white);
   display: flex;
   justify-content: center;
   gap: 3em;
-  padding: 1.8em 4em;
+  padding: 0.9em 4em;
   flex-wrap: wrap;
 }
 
@@ -107,24 +115,24 @@
 }
 
 .bande-item i {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--gold-light);
-  min-width: 1.4rem;
+  min-width: 1.2rem;
   text-align: center;
 }
 
 .bande-item div {
   display: flex;
   flex-direction: column;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
 }
 
 .bande-item strong {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--gold-light);
-  margin-bottom: 0.15em;
+  margin-bottom: 0.1em;
 }
 
 .bande-item a {
@@ -136,10 +144,10 @@
   color: var(--gold-light);
 }
 
-/* À PROPOS */
+/* ── À PROPOS ────────────────────────────────── */
 .apropos {
   background: var(--white);
-  min-height: calc(100vh - 2.6em);
+  min-height: calc(100dvh - var(--nav-h));
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -157,7 +165,7 @@
 }
 
 .apropos-texte h2 {
-  font-size: 2.2rem;
+  font-size: var(--text-2xl);
   font-weight: 800;
   color: var(--primary);
   line-height: 1.2;
@@ -182,7 +190,7 @@
 @media (max-width: 900px) {
   .bande-info {
     gap: 1.5em;
-    padding: 1.5em 2em;
+    padding: 0.8em 2em;
   }
 
   .apropos {
@@ -192,10 +200,6 @@
 }
 
 @media (max-width: 768px) {
-  .hero {
-    min-height: 100svh;
-  }
-
   .hero-contenu {
     padding: 0 1.4em;
   }
@@ -204,7 +208,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1.2em;
+    gap: 0.8em;
+    padding: 0.8em 1.5em;
   }
 
   .apropos {
@@ -215,4 +220,3 @@
     order: -1;
   }
 }
-

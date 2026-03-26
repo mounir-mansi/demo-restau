@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar/Navbar.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
 import "./Galerie.css";
 
 const API = import.meta.env.VITE_API_URL;
@@ -15,48 +14,29 @@ const PHOTOS_FALLBACK = [
   { src: "/gallery/photo6.jpg", alt: "Preparazione in cucina" },
 ];
 
-const EVENEMENTS = [
-  { date: "Ogni venerdì", titre: "Serata jazz", desc: "Concerto live dalle 20:00 — ingresso libero" },
-  { date: "Sabato 12 aprile", titre: "Brunch domenicale", desc: "Formula brunch 12:00–15:00 su prenotazione" },
-  { date: "Mercoledì 23 aprile", titre: "Serata tapas", desc: "Menu tapas e vini del mondo — 18:00–23:00" },
-];
-
 export default function Galerie() {
   const [photos, setPhotos] = useState(PHOTOS_FALLBACK);
-  const [concertBg, setConcertBg] = useState(null);
 
   useEffect(() => {
-    // Charger photos galerie depuis R2
     fetch(`${API}/api/gallery`)
       .then((r) => r.ok ? r.json() : null)
       .then((data) => {
         if (data) {
           const toutes = [
-            ...(data.main ? [{ src: data.main.src, alt: "Photo principale" }] : []),
-            ...(data.photos || []).map((p) => ({ src: p.src, alt: "Photo galerie" })),
+            ...(data.main ? [{ src: data.main.src, alt: "Foto principale" }] : []),
+            ...(data.photos || []).map((p) => ({ src: p.src, alt: "Foto galleria" })),
           ];
           if (toutes.length > 0) setPhotos(toutes);
         }
       })
       .catch(() => {});
-
-    // Charger photo de fond Événements
-    fetch(`${API}/api/sections`)
-      .then((r) => r.ok ? r.json() : {})
-      .then((s) => { if (s["concert"]) setConcertBg(s["concert"]); })
-      .catch(() => {});
   }, []);
-
-  const evenementsStyle = concertBg
-    ? { backgroundImage: `url(${concertBg})` }
-    : {};
 
   return (
     <div className="page-galerie">
       <Navbar />
 
       <main id="main-content">
-        {/* GALERIE */}
         <section className="galerie-section" aria-label="Galleria foto">
           <div className="galerie-header">
             <p className="section-label">Il nostro mondo</p>
@@ -69,7 +49,7 @@ export default function Galerie() {
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  loading="lazy"
+                  loading={i === 0 ? "eager" : "lazy"}
                   width="600"
                   height="400"
                 />
@@ -80,30 +60,7 @@ export default function Galerie() {
             ))}
           </div>
         </section>
-
-        {/* ÉVÉNEMENTS */}
-        <section className="evenements-section" style={evenementsStyle} aria-label="Eventi e serate">
-          <div className="evenements-overlay" aria-hidden="true" />
-          <div className="evenements-contenu">
-            <p className="section-label-light">Agenda</p>
-            <h2>Eventi &amp; serate</h2>
-            <ul className="evenements-liste">
-              {EVENEMENTS.map((ev, i) => (
-                <li key={i} className="evenement-item">
-                  <i className="fas fa-calendar-alt" aria-hidden="true" />
-                  <div>
-                    <span className="ev-date">{ev.date}</span>
-                    <strong>{ev.titre}</strong>
-                    <p>{ev.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

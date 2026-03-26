@@ -24,25 +24,26 @@ export default function Accueil() {
     <div className="page-accueil">
       <Navbar />
 
-      {/* HERO */}
-      <section className="hero" id="home" style={heroStyle}>
-        <div className="hero-overlay" />
-        <div className="hero-contenu">
-          <p className="hero-tag">Ristorante &amp; Snack</p>
-          <h1>Una cucina che ti assomiglia</h1>
-          <p className="hero-desc">
-            Sapori generosi, prodotti freschi, un&apos;atmosfera accogliente
-            nel cuore della città.
-          </p>
-          <div className="hero-ctas">
-            <Link to="/menu" className="btn-primary">Vedi il menu</Link>
-            <Link to="/contact" className="btn-outline">Contattaci</Link>
+      {/* ABOVE FOLD : hero + bande-info = 100dvh */}
+      <div className="above-fold">
+        <section className="hero" id="home" style={heroStyle}>
+          <div className="hero-overlay" />
+          <div className="hero-contenu">
+            <p className="hero-tag">Ristorante &amp; Snack</p>
+            <h1>Una cucina che ti assomiglia</h1>
+            <p className="hero-desc">
+              Sapori generosi, prodotti freschi, un&apos;atmosfera accogliente
+              nel cuore della città.
+            </p>
+            <div className="hero-ctas">
+              <Link to="/menu" className="btn-primary">Vedi il menu</Link>
+              <Link to="/contact" className="btn-outline">Contattaci</Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* BANDE INFO */}
-      <div className="bande-info" role="complementary" aria-label="Informazioni pratiche">
+        {/* BANDE INFO */}
+        <div className="bande-info" role="complementary" aria-label="Informazioni pratiche">
         <div className="bande-item">
           <i className="fas fa-map-marker-alt" aria-hidden="true" />
           <div>
@@ -71,7 +72,8 @@ export default function Accueil() {
             <span><a href="https://wa.me/33600000000">Scrivi un messaggio</a></span>
           </div>
         </div>
-      </div>
+        </div>{/* fin bande-info */}
+      </div>{/* fin above-fold */}
 
       <main id="main-content">
         {/* À PROPOS */}

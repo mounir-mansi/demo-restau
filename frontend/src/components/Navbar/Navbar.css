@@ -4,10 +4,11 @@
   left: 0;
   right: 0;
   z-index: 9999;
+  height: var(--nav-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.6em 4em;
+  padding: 0 4em;
   background: var(--primary);
   box-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }

@@ -135,7 +135,7 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={3}
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Il tuo messaggio..."

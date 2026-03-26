@@ -7,6 +7,7 @@ const LIENS = [
   { label: "Home", to: "/" },
   { label: "Menu", to: "/menu" },
   { label: "Galleria", to: "/galerie" },
+  { label: "Eventi", to: "/events" },
   { label: "Contatto", to: "/contact" },
 ];
 
