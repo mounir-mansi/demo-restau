@@ -8,7 +8,8 @@
   flex: 1;
   min-height: 0;
   position: relative;
-  background: url("/Gemini_Generated_Image_n9xgecn9xgecn9xg.png") center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   padding: var(--nav-h) 5em 2em;
@@ -17,7 +18,7 @@
 .eventi-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(15,15,26,0.88) 0%, rgba(26,26,46,0.72) 100%);
+  background: linear-gradient(135deg, rgba(15,15,26,0.40) 0%, rgba(26,26,46,0.20) 100%);
 }
 
 .eventi-contenu {
